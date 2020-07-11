@@ -1,0 +1,9 @@
+version: '1.0'
+
+services:
+  tesseractpython:
+    build: ./
+    image: pri-tesseract
+    container_name: pri-tesseract
+    volumes:
+      - .:/opt
