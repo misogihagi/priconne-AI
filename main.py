@@ -49,6 +49,7 @@ def main():
         img = Image.open(image_bytes)
         pytesseract.pytesseract.tesseract_cmd = 'tesseract'
         t = pytesseract.image_to_string(img, lang="pri") 
+        print(t)
         twitter.update_status(status=t, in_reply_to_status_id=id, auto_populate_reply_metadata=True)
         client.sadd('twitterid',id)
         print('replyed:'+id)
