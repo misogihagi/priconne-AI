@@ -48,8 +48,7 @@ def main():
         image_bytes = io.BytesIO(response.content)
         img = Image.open(image_bytes)
         pytesseract.pytesseract.tesseract_cmd = 'tesseract'
-        t = pytesseract.image_to_string(img, lang="pri") 
-        print(t)
+        t = pytesseract.image_to_string(img, lang="pri") or '(何も読み取れませんでした……)'
         twitter.update_status(status=t, in_reply_to_status_id=id, auto_populate_reply_metadata=True)
         client.sadd('twitterid',id)
         print('replyed:'+id)
