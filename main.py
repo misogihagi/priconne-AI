@@ -38,7 +38,6 @@ def main():
   for r in responses:
     medium=[]
     id=r['id_str']
-    if r['user']['id_str'] !=myuserid : continue
     try:
       medium=r['entities']['media']
     except:

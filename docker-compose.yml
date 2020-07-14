@@ -1,7 +1,7 @@
 version: '1.0'
 
 services:
-  tesseractpython:
+  pr-tesseract:
     build: ./
     image: pri-tesseract
     container_name: pri-tesseract
